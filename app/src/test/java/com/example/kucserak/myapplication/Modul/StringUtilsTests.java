@@ -1,4 +1,4 @@
-package com.example.kucserak.myapplication;
+package com.example.kucserak.myapplication.Modul;
 
 import com.example.kucserak.myapplication.Modul.StringUtils;
 
