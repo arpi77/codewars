@@ -16,4 +16,14 @@ public class IntegerUtils {
         }
         return result;
     }
+
+    public static double findUniq(double arr[]) {
+
+        for (int index = 1; index < arr.length; index++) {
+            if(index == arr.length - 1 && arr[index - 1] != arr[index]) return arr[index];
+            if (arr[index - 1] != arr[index] && arr[index] != arr[index + 1]) return arr[index];
+        }
+
+        return arr[0];
+    }
 }
