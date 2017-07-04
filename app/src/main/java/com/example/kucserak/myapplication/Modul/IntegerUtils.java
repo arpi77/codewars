@@ -20,10 +20,32 @@ public class IntegerUtils {
     public static double findUniq(double arr[]) {
 
         for (int index = 1; index < arr.length; index++) {
-            if(index == arr.length - 1 && arr[index - 1] != arr[index]) return arr[index];
+            if (index == arr.length - 1 && arr[index - 1] != arr[index]) return arr[index];
             if (arr[index - 1] != arr[index] && arr[index] != arr[index + 1]) return arr[index];
         }
 
         return arr[0];
+    }
+
+    public static int find(int[] integers) {
+        Integer firstOdd = null;
+        Integer firstEven = null;
+
+        for (int number : integers) {
+            if (number % 2 == 0) {
+                if (firstEven == null) {
+                    firstEven = number;
+                } else if (firstOdd != null) {
+                    return firstOdd;
+                }
+            } else {
+                if (firstOdd == null) {
+                    firstOdd = number;
+                } else if (firstEven != null) {
+                    return firstEven;
+                }
+            }
+        }
+        return integers[integers.length - 1];
     }
 }

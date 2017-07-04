@@ -21,4 +21,11 @@ public class StringUtilsTests {
     public void addition_isCorrect2() throws Exception {
         assertEquals("HELLO", StringUtils.makeUpperCase(null));
     }
+
+    @Test
+    public void exampleTests() {
+        assertEquals('e', StringUtils.findMissingLetter(new char[] { 'a','b','c','d','f' }));
+        assertEquals('P', StringUtils.findMissingLetter(new char[] { 'O','Q','R','S' }));
+        assertEquals('c', StringUtils.findMissingLetter(new char[] { 'b','d' }));
+    }
 }
