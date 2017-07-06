@@ -3,6 +3,7 @@ package com.example.kucserak.myapplication.Modul;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 
 /**
  * Created by kucserak on 26.6.2017.
@@ -44,5 +45,20 @@ public class IntegerUtilsTests {
         assertEquals(3, IntegerUtils.find(exampleTest1));
         assertEquals(206847684, IntegerUtils.find(exampleTest2));
         assertEquals(0, IntegerUtils.find(exampleTest3));
+    }
+
+    @Test
+    public void exampleTest1() {
+        assertArrayEquals(new int[]{ 1, 3, 2, 8, 5, 4 }, IntegerUtils.sortArray(new int[]{ 5, 3, 2, 8, 1, 4 }));
+    }
+
+    @Test
+    public void exampleTest2() {
+        assertArrayEquals(new int[]{ 1, 3, 5, 8, 0 }, IntegerUtils.sortArray(new int[]{ 5, 3, 1, 8, 0 }));
+    }
+
+    @Test
+    public void exampleTest3() {
+        assertArrayEquals(new int[]{}, IntegerUtils.sortArray(new int[]{}));
     }
 }

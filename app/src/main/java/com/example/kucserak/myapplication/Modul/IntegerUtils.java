@@ -1,5 +1,9 @@
 package com.example.kucserak.myapplication.Modul;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * Created by kucserak on 26.6.2017.
  */
@@ -47,5 +51,28 @@ public class IntegerUtils {
             }
         }
         return integers[integers.length - 1];
+    }
+
+    public static int[] sortArray(int[] array) {
+        List<Integer> oddNumbers = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
+        for (int num = 0; num < array.length; num++) {
+            if (array[num] % 2 == 0) continue;
+            oddNumbers.add(array[num]);
+        }
+        Collections.sort(oddNumbers);
+        int index = 0;
+        for (int num = 0; num < array.length; num++) {
+            if (array[num] % 2 == 0) result.add(array[num]);
+            else {
+                result.add(oddNumbers.get(index).intValue());
+                index++;
+            }
+        }
+
+        int[] ret = new int[result.size()];
+        for (int i = 0; i < ret.length; i++)
+            ret[i] = result.get(i);
+        return ret;
     }
 }
